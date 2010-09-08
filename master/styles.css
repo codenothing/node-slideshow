@@ -1,0 +1,83 @@
+/**
+ * Node Slide [VERSION]
+ * [DATE]
+ * Corey Hart @ http://www.codenothing.com
+ */
+#prev, #next {
+	float: left;
+	background: #f1f1f1;
+	border: 2px solid #ddd;
+	font-size: 155px;
+	margin: 30px 5%;
+	padding: 10px 0;
+	text-align: center;
+	width: 38%;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+#prev.chosen, #next.chosen {
+	background: #cef4fd;
+	border: 2px solid #989898;
+}
+
+#prev div, #next div {
+	border-style: solid;
+	width: 0;
+	height: 0;
+	margin: auto;
+}
+
+#prev div {
+	border-color: transparent #989898 transparent transparent;
+	border-width: 85px 110px 85px 100px;
+	margin-right: 40%;
+}
+
+#next div {
+	border-color: transparent transparent transparent #989898;
+	border-width: 85px 100px 85px 110px;
+	margin-left: 40%;
+}
+
+#time {
+	font-size: 125px;
+	width: 80%;
+	margin: 20px auto;
+	padding: 20px 0;
+	text-align: center;
+	border-radius: 10px;
+	background: #cefdd2;
+	border: 2px solid #83fb8f;
+}
+
+#time.warn {
+	background: #fbfdc4;
+	border: 2px solid #e7ed26;
+}
+
+#time.end {
+	background: #fdc9c9;
+	border: 2px solid #f93e3e;
+}
+
+#slides {
+	width: 60%;
+	margin-bottom: 50px;
+}
+
+#slides div {
+	float: left;
+	background: #f1f1f1;
+	border: 2px solid #ddd;
+	font-size: 85px;
+	padding: 5px 35px;
+	margin: 10px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+#slides div.chosen {
+	background: #cef4fd;
+	border: 2px solid #989898;
+}
