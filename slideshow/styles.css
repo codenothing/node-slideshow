@@ -1,5 +1,5 @@
 /**
- * Node Slide [Version]
+ * Node SlideShow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  * This stylesheet due in large part to Rob Flaherty(rob@ravelrumba.com)
@@ -46,7 +46,7 @@ h2 { font-family: 'ChunkFiveRegular', Arial; font-size: 30px; text-shadow: 0px 1
 p, li { font-family: Arial; font-size:20px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8); }
 p { margin: 0 0 1em; }
 li { list-style-type: disc; margin-left: 40px; }
-pre { font-size:20px; font-family: monospace; }
+pre { font-size: 20px; font-family: monospace; background: #ddd; border: 3px solid #555; padding: 5px; overflow: auto; }
 hgroup {margin: 0 0 20px;}
 header { overflow: hidden; color: #000; background-image: -moz-linear-gradient(top, #c5c5c5, #b0b0b0); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c5c5c5),color-stop(1, #b0b0b0)); border-top:1px solid #dcdcdc; border-bottom: 1px solid rgb(105, 105, 105); text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5); font-family: "Lucida Grande"; padding: 1px 10px; overflow:hidden; }
 header h1 { float: left; font-size: 18px;  line-height: 32px;}

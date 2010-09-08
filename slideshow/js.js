@@ -1,5 +1,5 @@
 /**
- * Node Slide [VERSION]
+ * Node SlideShow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  */
@@ -21,9 +21,10 @@ jQuery(function(){
 
 		slides.width( width - 60 ).height( height - 30 );
 		deck.width( width * slides.length + 100 );
-	})
+	}).resize();
+
 	// Allow custom slide views
-	.keyup(function( event ) {
+	jQuery( document ).keyup(function( event ) {
 		// left
 		if ( event.keyCode == 37 ) {
 			if ( slide > 0 ) {
@@ -38,10 +39,8 @@ jQuery(function(){
 				change();
 			}
 		}
-	})
-	// Make adjustments
-	.resize();
-
+		return false;
+	});
 	
 	// Only create the connection if allowed
 	if ( Config.enableSocket ) {

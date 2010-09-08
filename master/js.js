@@ -1,5 +1,5 @@
 /**
- * Node Slide [VERSION]
+ * Node SlideShow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  */
