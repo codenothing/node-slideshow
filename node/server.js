@@ -16,8 +16,8 @@ var sys = require('sys'),
 		timeEnd: 0,
 		timeEnabled: false,
 		slide: 0,
-		max: 0,
-	}
+		max: 0
+	},
 	stack = {},
 	rdir = /\/$/, rstart = /^[^\/]/;
 
@@ -27,16 +27,16 @@ var sys = require('sys'),
 	Socket
 */
 server.addListener("connection", function( conn ) {
+	sys.puts( 'Connection Created [id:' + conn.id + '] [time:' + Date.now() + ']' );
 	conn.write(
 		JSON.stringify({
 			slide: Info.slide
 		})
 	);
 	stack[ conn.id ] = conn;
-	sys.puts( 'Connection Created - ' + Date.now() );
 });
 server.addListener("close", function( conn ) {
-	sys.puts('Closing Connection');
+	sys.puts( 'Closing Connection [id:' + conn.id + '] [time:' + Date.now() + ']' );
 	if ( stack.hasOwnProperty( conn.id ) ) {
 		delete stack[ conn.id ];
 	}
@@ -66,6 +66,7 @@ http.createServer(function( request, response ) {
 		file = '/' + file;
 	}
 
+
 	// Operations check
 	if ( query.op == 'config' ) {
 		Info.timeLeft = Info.timeEnd - Date.now();
@@ -75,8 +76,8 @@ http.createServer(function( request, response ) {
 	}
 	else if ( query.op == 'start-time' ) {
 		Info.timeEnabled = true;
-		Info.timeEnd = Date.now() + Config.timed
-		Info.timeLeft = Info.timeEnd
+		Info.timeEnd = Date.now() + Config.timed;
+		Info.timeLeft = Info.timeEnd;
 		response.writeHead( 200 );
 		response.end( JSON.stringify( Info ) );
 		return;
@@ -91,6 +92,7 @@ http.createServer(function( request, response ) {
 		ret.slide = query.slide;
 	}
 
+
 	// Do slide transition if requested
 	if ( ret.slide !== undefined ) {
 		Info.slide = ret.slide;
@@ -102,11 +104,11 @@ http.createServer(function( request, response ) {
 			}
 		}
 		response.writeHead( 200 );
-		response.end("ok");
+		response.end( JSON.stringify( Info ) );
 	}
 	else if ( query.op ) {
 		response.writeHead( 200 );
-		response.end("ok");
+		response.end( JSON.stringify( Info ) );
 	}
 	else {
 		fs.readFile( __dirname + '/../master' + file, function( e, data ) {

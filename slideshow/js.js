@@ -7,12 +7,13 @@ jQuery(function(){
 	var deck = jQuery('#deck'), slides = deck.children('section'), win = jQuery( window ), slide = 0, width, height;
 
 
+	// Slide Transition
 	function change(){
 		deck.stop().animate( { marginLeft: ( slide * width ) * -1 }, Config.transitions );
 	}
 
 
-	// Enable page resizing
+	// Handle page resizing
 	win.resize(function(){
 		// Dimensions
 		width = win.width();
@@ -21,6 +22,7 @@ jQuery(function(){
 		slides.width( width - 60 ).height( height - 30 );
 		deck.width( width * slides.length + 100 );
 	})
+	// Allow custom slide views
 	.keyup(function( event ) {
 		// left
 		if ( event.keyCode == 37 ) {
@@ -37,9 +39,11 @@ jQuery(function(){
 			}
 		}
 	})
+	// Make adjustments
 	.resize();
 
 	
+	// Only create the connection if allowed
 	if ( Config.enableSocket ) {
 		var connection = new WebSocket( 'ws://' + Config.host + ':' + Config.port + '/' );
 		connection.onmessage = function( event ) {

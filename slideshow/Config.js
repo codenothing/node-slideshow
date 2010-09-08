@@ -8,7 +8,7 @@ this.Config = {
 	enableSocket: true && ( 'WebSocket' in this ),
 
 	// Websocket connection
-	host: '10.0.1.2',
+	host: 'localhost',
 	port: 8124,
 
 	// Time takes to transition between slides
