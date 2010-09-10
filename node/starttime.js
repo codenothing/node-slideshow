@@ -1,5 +1,5 @@
 /**
- * Node SlideShow [VERSION]
+ * Node Slideshow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  */
@@ -11,5 +11,17 @@ var sys = require('sys'),
 
 request.end();
 request.on('response', function( response ) {
-	sys.puts( 'Time Started' );
+	var min = parseInt( Config.timed / 60000, 10 ), sec = Config.timed % 60000;
+
+	// Zero Fill
+	if ( min < 10 ) {
+		min = '0' + min;
+	}
+
+	// Zero Fill
+	if ( sec < 10 ) {
+		sec = '0' + sec;
+	}
+
+	sys.puts( 'Presentation Timer Started - ' + min + ':' + sec + ' left' );
 });

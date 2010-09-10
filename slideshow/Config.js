@@ -1,5 +1,5 @@
 /**
- * Node SlideShow [VERSION]
+ * Node Slideshow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  */
@@ -8,7 +8,7 @@ this.Config = {
 	enableSocket: true && ( 'WebSocket' in this ),
 
 	// Websocket connection
-	host: '192.168.1.116',
+	host: 'localhost',
 	port: 8124,
 
 	// Time takes to transition between slides

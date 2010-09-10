@@ -1,5 +1,5 @@
 /**
- * Node SlideShow [VERSION]
+ * Node Slideshow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  */
@@ -24,10 +24,14 @@ jQuery(function(){
 		timeLeft = parseInt( data.timeLeft / 1000, 10 );
 		timeWarning = parseInt( data.timeWarning / 1000, 10 );
 		timer();
+
+		// Always clear the interval
+		if ( timeid ) {
+			timeid = clearInterval( timeid );
+		}
+
+		// If timer still enabled, run it
 		if ( data.timeEnabled ) {
-			if ( timeid ) {
-				timeid = clearInterval( timeid );
-			}
 			timeid = setInterval(function(){
 				timeLeft--;
 				timer();

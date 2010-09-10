@@ -1,5 +1,5 @@
 /**
- * Node SlideShow [VERSION]
+ * Node Slideshow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  */
@@ -106,6 +106,8 @@ http.createServer(function( request, response ) {
 		response.writeHead( 200 );
 		response.end( JSON.stringify( Info ) );
 	}
+	// Sometimes operations cannot be be completed, 
+	// this is a fallback so full pages are downloaded on those requests
 	else if ( query.op ) {
 		response.writeHead( 200 );
 		response.end( JSON.stringify( Info ) );
@@ -115,7 +117,7 @@ http.createServer(function( request, response ) {
 			if ( e ) {
 				sys.puts( 'Bad File Request - ' + e );
 				response.writeHead( 400 );
-				response.end("Bad Request");
+				response.end("<h1>Bad Request</h1>");
 			}
 			else {
 				response.writeHead( 200 );
@@ -125,7 +127,7 @@ http.createServer(function( request, response ) {
 	}
 
 }).listen( Config.masterport );
-sys.puts('Server Started at http://localhost:' + Config.masterport + '/' );
+sys.puts('Master Controller Enabled at http://localhost:' + Config.masterport + '/' );
 
 
 /* Reading Max Slides */

@@ -1,5 +1,5 @@
 /**
- * Node SlideShow [VERSION]
+ * Node Slideshow [VERSION]
  * [DATE]
  * Corey Hart @ http://www.codenothing.com
  * This stylesheet due in large part to Rob Flaherty(rob@ravelrumba.com)
@@ -13,7 +13,7 @@
 }
 
 /* Meyer Reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}:focus{outline:0}body{line-height:1;color:black;background:white}ol,ul{list-style:none}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:""""}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;}:focus{outline:0}body{line-height:1;color:black;background:white}ol,ul{list-style:none}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:""""}
 
 /* Core Styles */
 html{ font-size:100%; overflow: hidden; }
@@ -23,7 +23,7 @@ input, select, textarea { font-family: "Helvetica Neue", Helvetica, Arial, Sans-
 strong{ font-weight:bold; }
 em { font-style: italic; }
 hr { display: none; }
-img { display: block; }
+img { display: block;  border: 3px solid #aaa; padding: 3px; background: white; margin: 0 10px; }
 a img { border: none; } 
 cite { font-style: normal; } 
 code { background: #ececec; padding: 0 3px; }
@@ -50,3 +50,5 @@ pre { font-size: 20px; font-family: monospace; background: #ddd; border: 3px sol
 hgroup {margin: 0 0 20px;}
 header { overflow: hidden; color: #000; background-image: -moz-linear-gradient(top, #c5c5c5, #b0b0b0); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c5c5c5),color-stop(1, #b0b0b0)); border-top:1px solid #dcdcdc; border-bottom: 1px solid rgb(105, 105, 105); text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5); font-family: "Lucida Grande"; padding: 1px 10px; overflow:hidden; }
 header h1 { float: left; font-size: 18px;  line-height: 32px;}
+.center { margin: 0 auto; }
+.smallprint { font-size: 14px; }

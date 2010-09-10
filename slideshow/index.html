@@ -8,180 +8,265 @@
 	<script type='text/javascript' src="Config.js"></script>
 	<script type='text/javascript' src="js.js"></script>
 	<script type='text/javascript' src="jquery.chili.js"></script>
-	<!-- <script type='text/javascript' src="recipes/jquery.chili.recipes.js.js"></script> -->
 </head>
 <body>
 <div id='deck'>
 
 <!--
-Node SlideShow [VERSION]
+Node Slideshow [VERSION]
 [DATE]
 Corey Hart @ http://www.codenothing.com
 -->
 
 
+<!-- Intro Slide -->
 <section>
 	<hgroup>
-		<h1>Slide Header 1</h1>
-		<h2>Lorem Ipsum</h2>
-	</hgroup>
-	<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede.</p>
-	<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede.</p>
-	<p>Pellentesque nibh felis, eleifend id, commodo in, interdum vitae, leo. Praesent eu elit. Ut eu ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Maecenas elementum augue nec nisl. Proin auctor lorem at nibh. Curabitur nulla purus, feugiat id, elementum in, lobortis quis, pede.</p>
-</section>
-
-
-<section>
-	<hgroup>
-		<h1>Slide Header 2</h1>
-		<h2>Using Points</h2>
+		<h1>Node Slideshow</h1>
+		<h2>Web Based Slideshow</h2>
 	</hgroup>
 	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
+		<li>Integrated by <a target='_blank' href='http://www.codenothing.com'>Corey Hart</a></li>
+		<li>Original Slideshow work done by <a target='_blank' href='http://www.ravelrumba.com/blog/html5-slideshow/'>Rob Flaherty</a></li>
+		<li>Node.js Web Socket work done by <a target='_blank' href='http://github.com/gimite/web-socket-js'>Hiroshi Ichikawa</a></li>
+		<li>Syntax Highlighting [ <a href='http://github.com/aercolino/Chili'>jQuery Chili NEXT</a> ] work done by <a target='_blank' href='http://noteslog.com/'>Andrea Ercolino</a></li>
 	</ul>
 </section>
 
 
+
+
+
+<!-- Code Blocks -->
 <section>
 	<hgroup>
-		<h1>Slide Header 3</h1>
-		<h2>Code Blocks</h2>
+		<h1>Code Blocks</h1>
 	</hgroup>
 
+	<p>
+		Node Slideshow comes with the <a target='_blank' href='http://noteslog.com/chili/'>jQuery Chili Plugin</a> built in.
+		You can check the <a target='_blank' href='recipes/'>recipe folder</a> for language support.
+	</p>
+
+	<p><b>Javascript</b></p>
 	<pre class='chili-lang-js'>
-$('testing').choose(function(){
-	$(this).cool();
-});
-	</pre>
+window.onload = function(){
+	alert('Hello World!');
+};</pre>
+
+	<br>
+
+	<p><b>PHP</b></p>
+	<pre class='chili-lang-php'>echo '&lt;p&gt;Hello World!&lt;/p&gt;'</pre>
+
+	<br>
+
+	<p><b>MySQL</b></p>
+	<pre class='chili-lang-mysql'>INSERT INTO `messages` VALUE ('Hello World!');</pre>
 </section>
 
 
+
+
+<!-- Images -->
 <section>
 	<hgroup>
-		<h1>Slide Header 4</h1>
-		<h2>Using Points</h2>
+		<h1>Working With Images</h1>
 	</hgroup>
+	<img align='left' src='images/hwy1.png' />
+	<p>
+		This image was taken off the coast of California in a cliff side rest stop on Highway 1.<br><br>
+		<i>Corey Hart - June 2008</i>
+	</p>
+</section>
+
+
+
+
+<!-- Embed Scripts -->
+<section>
+	<hgroup>
+		<h1>Embeding Videos</h1>
+		<h2>Hello Youtube</h2>
+	</hgroup>
+	<p>...embed code here...</p>
+</section>
+
+
+
+
+<!-- Master Controller -->
+<section>
+	<hgroup>
+		<h1>Master Controller</h1>
+		<h2>Controlling the Slideshow</h2>
+	</hgroup>
+
+	<p>
+		The Master Controller was built for mobile devices, but will work within browsers as well.
+		To enable it, run the server.sh shell script provided.
+	</p>
+
+	<pre>
+$ cd node-slideshow
+$ ./server.sh
+Socket created on port 8124
+Master Controller Enabled at http://localhost:8125/
+10 Slides</pre>
+
+	<br><br>
+	<p>
+		The stdout tells us a few things:
+	</p>
+
 	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
+		<li>The Socket Port that all slideshows connect to is (8124)</li>
+		<li>To use the Master Controller, go to <a target='_blank' href='http://localhost:8125/'>http://localhost:8125/</a>
+		<li>There are 12 Total Slides in your presentation</li>
+	</ul>
+</section>
+
+
+
+
+
+<!-- Presentation Timer -->
+<section>
+	<hgroup>
+		<h1>Presentation Timer</h1>
+	</hgroup>
+
+	<p>
+		The master controller also comes with a countdown timer to keep track of time left during a presentation.
+		To enable, you need to run the starttime.sh shell script in the root directory.
+	</p>
+	<p>
+		<b>Note*:</b> This must be done <i>after</i> the server has started.
+	</p>
+	<img src='images/ptimer.png' align='right' />
+	<pre>
+$ cd node-slideshow
+$ ./starttime.sh
+Presentation Timer Started - 45:00 left</pre>
+	<br>
+</section>
+
+
+
+
+<!-- Exporting -->
+<section>
+	<hgroup>
+		<h1>Exporting Slideshow</h1>
+		<h2>Mr. Independent</h2>
+	</hgroup>
+
+	<p>
+		User's viewing the slideshow have their own personal keyboard controls.<br>
+		<u>Next Slide</u>: Right Arrow, Spacebar, Enter.<br>
+		<u>Previous Slide</u>: Left Arrow &amp; Backspace.<br>
+	</p>
+
+	<p>
+		The slideshow/ directory is also completely independent from the rest of the project, so it can be zipped up
+		and passed around as needed.
+	</p>
+
+	<pre class='smallprint'>
+$ cd node-slideshow
+$ zip -r slideshow.zip slideshow/
+  adding: slideshow/ (stored 0%)
+  adding: slideshow/Config.js (deflated 26%)
+  adding: slideshow/fonts/ (stored 0%)
+  adding: slideshow/fonts/Chunkfive-webfont.eot (deflated 37%)
+  adding: slideshow/fonts/Chunkfive-webfont.svg (deflated 61%)
+  ...
+$ ls
+master        node          revar.sh      server.sh     slideshow     <b style='color: blue;'>slideshow.zip</b> starttime.sh</pre>
+</section>
+
+
+
+<!-- Slideshow Configuration -->
+<section>
+	<hgroup>
+		<h1>Slidshow Config</h1>
+		<h2>slideshow/Config.js</h2>
+	</hgroup>
+
+	<pre class='smallprint chili-lang-js'>
+/**
+ * Node Slideshow [VERSION]
+ * [DATE]
+ * Corey Hart @ http://www.codenothing.com
+ */
+this.Config = {
+	// Disable for distribution, and final check for websocket
+	enableSocket: true &amp;&amp; ( 'WebSocket' in this ),
+
+	// Websocket connection
+	host: 'localhost',
+	port: 8124,
+
+	// Time takes to transition between slides
+	transitions: 200
+};</pre>
+	<br>
+	<ul>
+		<li><b>enableSocket:</b> Enables use of Web Socket API on the browser (and only if the browser is capable)</li>
+		<li><b>host:</b> Host of the Socket Connection</li>
+		<li><b>port:</b> Port of the Socket Connection</li>
+		<li><b>transitions:</b> Animation time for slide transition.</li>
+	</ul>
+</section>
+
+
+
+<!-- Master Configuration -->
+<section>
+	<hgroup>
+		<h1>Master Config</h1>
+		<h2>master/Config.js</h2>
+	</hgroup>
+
+	<pre class='chili-lang-js' style='font-size: 14px;'>
+/**
+ * Node Slideshow [VERSION]
+ * [DATE]
+ * Corey Hart @ http://www.codenothing.com
+ */
+this.Config = require('../slideshow/Config').Config;
+
+// Port for master server
+this.Config.masterport = 8125;
+
+// Time (in milliseconds) for countdown timer
+this.Config.timed = 45 * 60 * 1000;
+
+// When to turn on warning color for countdown timer (in milliseconds)
+this.Config.timeWarning = 15 * 60 * 1000;</pre>
+	<br>
+	<ul>
+		<li><b>masterport:</b> Port of the Master Controller</li>
+		<li><b>timed:</b> For timing a presentation. Set the time limit (in milliseconds) here, and run starttime.sh (after server.sh)</li>
+		<li><b>timeWarning:</b> For when countdown timer is enabled, will switch the timer color to yellow at this mark.</li>
 	</ul>
 </section>
 
 
 <section>
 	<hgroup>
-		<h1>Slide Header 5</h1>
-		<h2>Using Points</h2>
+		<h1>Fin</h1>
+		<h2>And contact info</h2>
 	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
-</section>
 
+	<p>
+		Thanks for your interest. Please send all feedback or questions to <a href='mailto:corey@codenothing.com'>corey@codeNothing.com</a>.
+	</p>
 
-<section>
-	<hgroup>
-		<h1>Slide Header 6</h1>
-		<h2>Using Points</h2>
-	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
-</section>
-
-
-<section>
-	<hgroup>
-		<h1>Slide Header 7</h1>
-		<h2>Using Points</h2>
-	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
-</section>
-
-
-<section>
-	<hgroup>
-		<h1>Slide Header 8</h1>
-		<h2>Using Points</h2>
-	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
-</section>
-
-
-<section>
-	<hgroup>
-		<h1>Slide Header 9</h1>
-		<h2>Using Points</h2>
-	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
-</section>
-
-
-<section>
-	<hgroup>
-		<h1>Slide Header 10</h1>
-		<h2>Using Points</h2>
-	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
-</section>
-
-
-<section>
-	<hgroup>
-		<h1>Slide Header 11</h1>
-		<h2>Using Points</h2>
-	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
-</section>
-
-
-<section>
-	<hgroup>
-		<h1>Slide Header 12</h1>
-		<h2>Using Points</h2>
-	</hgroup>
-	<ul>
-		<li>Point 1</li>
-		<li>Point 2</li>
-		<li>Point 3</li>
-		<li>Point 4</li>
-	</ul>
+	<p>
+		You can also tweet me: <a href='https://twitter.com/codeNothing'>@codeNothing</a>.
+	</p>
 </section>
 
 

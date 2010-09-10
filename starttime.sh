@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Node SlideShow [VERSION]
+# Node Slideshow [VERSION]
 # [DATE]
 # Corey Hart @ http://www.codenothing.com
 #
