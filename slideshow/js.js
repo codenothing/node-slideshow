@@ -20,6 +20,7 @@ jQuery(function(){
 		width = win.width();
 		height = win.height();
 
+		// Reset dimensions
 		slides.width( width - 60 ).height( height - 30 );
 		deck.width( width * slides.length + 100 );
 

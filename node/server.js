@@ -103,6 +103,7 @@ http.createServer(function( request, response ) {
 				break;
 			}
 		}
+		Info.timeLeft = Info.timeEnd - Date.now();
 		response.writeHead( 200 );
 		response.end( JSON.stringify( Info ) );
 	}
