@@ -9,7 +9,7 @@ this.Config = {
 
 	// Websocket connection
 	host: 'localhost',
-	port: 8124,
+	port: 8080,
 
 	// Time takes to transition between slides
 	transitions: 200

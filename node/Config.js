@@ -6,7 +6,7 @@
 this.Config = require('../slideshow/Config').Config;
 
 // Port for master server
-this.Config.masterport = 8125;
+this.Config.masterport = 8008;
 
 // Time (in milliseconds) for countdown timer
 this.Config.timed = 45 * 60 * 1000;
