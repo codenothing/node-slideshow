@@ -2,7 +2,7 @@
 ========================
 
 Node Slideshow is a web based presentation app that uses nodejs and web sockets to control all viewing slideshows.
-See the [video](http://www.youtube.com/watch?v=rSzyarICWiU) for a demonstation.
+See the [video](http://www.youtube.com/watch?v=rSzyarICWiU) for a demonstration.
 
 
 Credits
